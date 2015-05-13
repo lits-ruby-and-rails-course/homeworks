@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+}
+
+.board {
+  display: flex;
+  flex-flow: column wrap;
+  height: 442px;
+  width: 440px;
+  margin: 10px;
+  border: 1px solid;
+}
+
+.cells-container {
+  display: flex;
+  flex-flow: wrap;
+  width: 400px;
+  height: 400px;
+  border: 1px solid;
+  background: lightyellow;
+}
+
+.cell {
+  height: 50px;
+  width: 50px;
+}
+
+.cell:hover {
+  background: lightcyan;
+}
+
+.black {
+  background-color: black;
+}
+
+.numbers-container {
+  width: 20px;
+  height: 400px;
+}
+
+.letters-container {
+  height: 20px;
+  width: 400px;
+  display: flex;
+}
+
+.number {
+  height: 50px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.letter {
+  width: 50px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 20px;
+}
+
+.corner {
+  width: 20px;
+  height: 20px;
+}
