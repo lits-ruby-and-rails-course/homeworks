@@ -1,0 +1,5 @@
+<div class="cells-container">
+	<% @board.each do |cell| %>
+		<div class="cell <%= "black" if cell %>"></div>
+	<% end %>
+</div>
