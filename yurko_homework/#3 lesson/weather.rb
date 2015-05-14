@@ -8,12 +8,20 @@ class Weather
           'mode=json&units=metric&cnt=14&q='
 
   def initialize
-    @city = 'lviv'
+    @city = ARGV.shift || 'lviv'
+    @wind = ARGV.shift || 5
   end
 
   def run
-    puts 'Nearest good weather:'
-    puts find_weather 5, "Clear"
+    days = find_weather @wind, "Clear"
+# binding.pry
+    if days.empty?
+      puts "Ooops.. non-flying weather in #{@city.capitalize}"
+    elsif
+      puts "Nearest good weather in #{@city.capitalize} " +
+           "(with clear sky and wind <= #{@wind} mps): " +
+           days.to_s
+    end
   end
 
   private
@@ -28,12 +36,12 @@ class Weather
       check_wind(day, wind_speed) && check_precipitation(day, precip)}.compact
   end
 
-  def check_wind day, speed
-    day["speed"] <= speed
+  def check_wind day, wind_speed
+    day["speed"] <= wind_speed.to_f
   end
 
-  def check_precipitation day, precip
-    day["weather"].first["main"] == precip
+  def check_precipitation day, precipitations
+    day["weather"].first["main"] == precipitations
   end
 
   def get_date unix_time
