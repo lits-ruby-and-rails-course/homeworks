@@ -26,8 +26,9 @@ class QuickSort
   end
 end
 
+print 'Enter array size: '
 n = gets.to_i
-a = (1..n).to_a.sort_by {rand}
+a = (1..n).to_a.shuffle
 puts a.to_s
 QuickSort.new.Sort(a)
 puts a.to_s

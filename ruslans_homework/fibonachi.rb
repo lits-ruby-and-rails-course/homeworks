@@ -15,4 +15,20 @@ def fib(n)
   end
   rc
 end
-puts fib(50000)
+
+def fibonacci(k)
+  return k if k < 2
+  f0 = 0 
+  f1 = 1
+  f2 = 0
+  i = 2
+  while (i <= k) do 
+    f2 = f1 + f0
+    f0 = f1
+    f1 = f2
+    i+=1 
+  end
+  f2 
+end
+
+puts fibonacci(50000)
