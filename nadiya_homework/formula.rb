@@ -27,6 +27,12 @@ class Formula
     def to_s
         
     end
+
+    alias :+ :add
+    alias :- :subtract
+    alias :* :multiply
+    alias :/ :divide
+
 end
  
 a = Formula.new(5)
@@ -35,4 +41,8 @@ a.subtract(3)
 a.divide(6)
 a.add(8)
 a.multiply(8)
+a-12
+a/2
+a+7
+a*3
 a.result
