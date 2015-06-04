@@ -2,21 +2,26 @@ class Formula
     
     def initialize(number)
         @number = number
+        @str = number.to_s
     end
         
     def add(n)
+        @str += "+" + n.to_s
         puts @number += n
     end
     
     def subtract(n)
+        @str += "-" + n.to_s
         puts @number -= n
     end
     
     def divide(n)
+        @str = "(" + @str + ")"  + "/" + n.to_s
         puts @number /= n
     end
     
     def multiply(n)
+        @str = "(" + @str + ")"  + "*" + n.to_s
         puts @number *= n
     end
     
@@ -25,7 +30,7 @@ class Formula
     end
     
     def to_s
-        
+        @str
     end
 
     alias :+ :add
@@ -46,3 +51,4 @@ a/2
 a+7
 a*3
 a.result
+a.to_s
